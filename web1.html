@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard -Vega</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Power BI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reporte">Reportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <main class="container my-4">
+        <h1 class="text-center">Visualización en Tiempo Real</h1>
+        <p class="text-center">
+            Este reporte de Power BI se actualiza automáticamente cada 30 segundos.
+        </p>
+        <div id="reporte" class="d-flex justify-content-center">
+            <iframe id="powerbi-report" 
+                title="Reporte Power BI" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZDMyNjhlMDQtMzE5Zi00ODYwLWI0OTMtMzdmMzUwZDgyM2Q3IiwidCI6Ijk1ZDQxMWNmLWMyYjQtNDE0Ny1hNzI1LWRlMDM4NDFlY2I5NyJ9" 
+                allowFullScreen="true">
+            </iframe>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 Power BI Viewer. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el refresco automático -->
+    <script>
+        setInterval(() => {
+            const iframe = document.getElementById('powerbi-report');
+            iframe.src = iframe.src; // Recarga el iframe
+        }, 30000); // Refresca cada 30 segundos
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
