@@ -47,21 +47,28 @@
     </nav>
 
     <!-- Body -->
-    <main class="container my-4">
-        <h1 class="text-center">Visualización en Tiempo Real</h1>
+    <main class="container">
+    <!--    <h1 class="text-center">Visualización en Tiempo Real</h1> -->
         <p class="text-center">
             Usa el botón para actualizar manualmente el reporte.
         </p>
+
         <div id="reporte" class="d-flex justify-content-center">
+           
+            <div class="text-center mt-3" >
+                <button id="refresh-btn" class="btn btn-primary" style="background-color: red;">Actualizar Reporte</button>
+            </div>
+
             <iframe id="powerbi-report" 
                 title="Reporte Power BI" 
-                src="https://app.powerbi.com/view?r=eyJrIjoiZDMyNjhlMDQtMzE5Zi00ODYwLWI0OTMtMzdmMzUwZDgyM2Q3IiwidCI6Ijk1ZDQxMWNmLWMyYjQtNDE0Ny1hNzI1LWRlMDM4NDFlY2I5NyJ9" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiNTBkNTA1NjQtMDU4ZC00MjJkLTk2ZGItOTBhZjhiMWNkMDliIiwidCI6Ijk1ZDQxMWNmLWMyYjQtNDE0Ny1hNzI1LWRlMDM4NDFlY2I5NyJ9" 
                 allowFullScreen="true">
             </iframe>
+
+
+
         </div>
-        <div class="text-center mt-3">
-            <button id="refresh-btn" class="btn btn-primary">Actualizar Reporte</button>
-        </div>
+  
     </main>
 
     <!-- Footer -->
